@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<h1>Mon CV</h1>
+
+<section>
+  <h2>Informations Personnelles</h2>
+  <p><strong>Nom :</strong> Boyer</p>
+  <p><strong>Prénom :</strong> Maxence</p> 
+  <p><strong>Email :</strong> maxence.boyer15112005@gmail.com</p>
+  <p><strong>Adresse :</strong> 14 rue Charles Louis Picaud, 42300 Roanne</p>
+  <p><strong>Permis :</strong> B</p> 
+</section>
+
+<section>
+  <h2>Formations</h2>
+  <ul>
+    <li><strong>Juin 2021: Obtention du Diplôme National du Brevet</strong> au Collège Sacré-Coeur à Sainte-Sigolène</li>
+    <li><strong>2022-2024: Première et Terminale STI2D</strong> au lycée Notre-Dame du Château à Monistrol-sur-Loire</li>
+    <li><strong>Juillet 2024: Obtention du Baccalauréat</strong> au lycée Notre-Dame du Château à Monistrol-sur-Loire</li>
+    <li><strong>2024- : Etudiant en Réseaux et Télécommunications</strong> à l'université de Roanne</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Expériences professionnelles</h2>
+  <ul>  
+    <li><strong>Juin 2021: Immersion d'une semaine au Syndicat des eaux à Sainte-Sigolène :</strong></li>
+    <p>Organisation chantiers (lieu, matériel, délais...)</p>
+    <li><strong>Mars 2023: Immersion d'une semaine chez JM Polymers Saint-Romain Lachalm :</strong></li> 
+    <p>Comptabilité, vérification d'enregistrements d'impôts, découverte des autres secteurs.</p>
+    <li><strong>Août 2024 - : Agent de déchetterie à la déchetterie de Monistrol-sur-Loire:</strong></li>
+    <p>Travail en tant que saisonnier pendant les périodes de vacances scolaires, accueille et coordonne les clients</p>
+  </ul>
+</section>
+
+<section>
+  <h2>Compétences</h2>
+  <ul>  
+    <li>Maîtrise de l'outil informatique</li>
+    <li>Saisie de factures</li>
+    <li>Rigueur</li>
+    <li>Sérieux</li>
+    <li>Appliqué</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Divers</h2>
+  <ul>
+    <li>Pratique de la musique depuis 9 ans.</li>
+    <li>A pratiqué du tuba pendant 5 ans.</li>
+    <li>Pratique du saxophone depuis 4 ans.</li>
+    <li>Fait Partie de l'harmonie de Sainte-Sigolène depuis 2020.</li>
+  </ul>
+</section>
+
+<br>
+<a href="{{ asset('images/CV.jpg') }}" download="CV-Maxence-Boyer.jpg">
+    <button>Télécharger le CV</button>
+</a>
+
+<footer>
+  <p>CV mis à jour en janvier 2025</p>
+</footer>
+
+{% endblock %}

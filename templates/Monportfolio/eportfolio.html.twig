@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<h1> bienvenue sur la page de mon e-portfolio </h1>
+<div class="container">
+        <div class="rubrique">
+            <h2>Administrer</h2>
+            <p>Consiste à gérer, configurer et superviser les infrastructures réseaux et systèmes informatiques afin d'assurer leur bon fonctionnement, leur sécurité et leur disponibilité pour les utilisateurs.</p>
+            <button class="toggle-btn" onclick="toggleDescription('admin-desc')">Afficher plus</button>
+            <p class="description" id="admin-desc">Cette rubrique permet de gérer et d'administrer les fonctionnalités principales de votre système.</p>
+        </div>
+
+        <div class="rubrique">
+            <h2>Connecter</h2>
+            <p>Consiste à établir, configurer et maintenir les connexions entre les équipements et réseaux pour assurer une communication efficace et fiable.</p>
+            <button class="toggle-btn" onclick="toggleDescription('connect-desc')">Afficher plus</button>
+            <p class="description" id="connect-desc">Cette rubrique permet de se connecter aux services et plateformes associées.</p>
+        </div>
+
+        <div class="rubrique">
+            <h2>Communiquer</h2>
+            <p>Consiste à transmettre efficacement des informations techniques ou fonctionnelles, que ce soit à des équipes, des clients ou des partenaires, en utilisant des outils et supports adaptés.</p>
+            <button class="toggle-btn" onclick="toggleDescription('comm-desc')">Afficher plus</button>
+            <p class="description" id="comm-desc">Cette rubrique vous aide à communiquer efficacement avec vos équipes et vos clients.</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleDescription(id) {
+            const desc = document.getElementById(id);
+            const isVisible = desc.style.display === 'block';
+            desc.style.display = isVisible ? 'none' : 'block';
+        }
+    </script>
+
+{% endblock %}

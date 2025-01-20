@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<h1> Bienvenue sur la page de mes loisirs </h1>
+<div class="gallery">
+        <div class="image-item">
+            <img src="{{ asset('images/saxo.png') }}" alt="Personne jouant du saxophone" />
+            <p>Moi jouant du saxophone.</p>
+        </div>
+        <div class="image-item">
+            <img src="{{ asset('images/course à pied.jpg') }}" alt="Deux coureurs dans la nature" />
+            <p>J'aime courir.</p>
+        </div>
+        <div class="image-item">
+            <img src="{{ asset('images/programmation.jpg') }}" alt="Personne en train de coder" />
+            <p>J'adore coder en langage informatique et même configurer des appareils.</p>
+        </div>
+        <div class="image-item">
+            <img src="{{ asset('images/ASSE.jpg') }}" alt="Match de football entre deux équipes" />
+            <p>J'aime regarder les matchs de Saint-Etienne</p>
+        </div>
+    </div>
+{% endblock %}

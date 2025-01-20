@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel= "stylesheet" href="https://bootswatch.com/5/united/bootstrap.min.css">
+        <link rel="stylesheet" href="{{ asset('build/app.css') }}">
+        {% block stylesheets %}
+        {% endblock %}
+    </head>
+    <style>
+    #image img {
+    width: 400px; 
+    height: auto;
+    align-items: center;
+    }
+    /* Styles pour la galerie */
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 60px;
+        padding: 20px;
+        align-items: center;
+    }
+
+    .image-item {
+        text-align: center;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        background-color: #f9f9f9;
+    }
+
+    .image-item img {
+        width: 100%;
+        height: auto;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .image-item p {
+        margin: 10px 0;
+        font-size: 14px;
+        color: #333;
+    }
+
+
+
+
+
+
+
+
+
+
+    footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 20px 10px;
+        font-size: 14px;
+    }
+    footer a {
+        color: #00bcd4;
+        text-decoration: none;
+    }
+    footer a:hover {
+        text-decoration: underline;
+    }
+
+        
+        
+    
+    </style>
+
+
+
+    <body>
+        <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">accueil
+            <span class="visually-hidden">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/loisir">loisir</a>
+        </li> 
+        <li class="nav-item">
+          <a class="nav-link" href="/cv">CV</a>
+        </li> 
+        <li class="nav-item">
+          <a class="nav-link" href="/eportfolio">E-Portfolio</a>
+        </li>
+
+      </ul>
+      
+    </div>
+  </div>
+</nav>
+<div class="controller">
+    {% block body %} {% endblock %}
+</div>
+{% block javascripts %} {% endblock %}
+    </body>
+  <footer>
+    <p>&copy; 2025 Maxence Boyer. Tous droits réservés.</p>
+    <p>Ce site est protégé par les lois sur le droit d'auteur. Toute reproduction, représentation ou modification du site web est interdit.</p>
+    <p>Les images de ce site sont protégés par creative commons.</p>
+  </footer>
+    <script src="https://bootswatch.com/_vendor/bootstrap/dist/js/bootstrap.bumble.min.js"></script>
+</html>
