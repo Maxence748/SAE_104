@@ -4,54 +4,42 @@
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel= "stylesheet" href="https://bootswatch.com/5/united/bootstrap.min.css">
-        <link rel="stylesheet" href="{{ asset('build/app.css') }}">
         {% block stylesheets %}
         {% endblock %}
     </head>
     <style>
-    #image img {
-    width: 400px; 
-    height: auto;
-    align-items: center;
-    }
-    /* Styles pour la galerie */
-    .gallery {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 60px;
-        padding: 20px;
-        align-items: center;
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        background-color: #f4f4f9;
+        margin: 0;
+        padding: 0;
     }
 
-    .image-item {
+    h1, h2 {
         text-align: center;
-        border: 1px solid #ddd;
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        background-color: #f9f9f9;
-    }
-
-    .image-item img {
-        width: 100%;
-        height: auto;
-        border-bottom: 1px solid #ddd;
-    }
-
-    .image-item p {
-        margin: 10px 0;
-        font-size: 14px;
         color: #333;
     }
 
+    .rubrique {
+        margin: 30px auto;
+        padding: 20px;
+        max-width: 800px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
 
+    .rubrique h2 {
+        font-size: 24px;
+        color: #00bcd4;
+    }
 
-
-
-
-
-
-
+    .rubrique p {
+        margin: 10px 0;
+        font-size: 16px;
+        color: #555;
+    }
 
     footer {
         background-color: #333;
@@ -60,18 +48,37 @@
         padding: 20px 10px;
         font-size: 14px;
     }
+
     footer a {
         color: #00bcd4;
         text-decoration: none;
     }
+
     footer a:hover {
         text-decoration: underline;
     }
 
-        
-        
-    
-    </style>
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+    }
+
+    .image-item {
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        background-color: #f9f9f9;
+        text-align: center;
+    }
+
+    .image-item img {
+        width: 100%;
+        height: auto;
+        border-bottom: 1px solid #ddd;
+    }
+</style>
 
 
 

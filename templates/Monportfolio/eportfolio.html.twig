@@ -1,35 +1,145 @@
 {% extends 'base.html.twig' %}
 {% block body %}
 <h1> bienvenue sur la page de mon e-portfolio </h1>
-<div class="container">
-        <div class="rubrique">
-            <h2>Administrer</h2>
-            <p>Consiste à gérer, configurer et superviser les infrastructures réseaux et systèmes informatiques afin d'assurer leur bon fonctionnement, leur sécurité et leur disponibilité pour les utilisateurs.</p>
-            <button class="toggle-btn" onclick="toggleDescription('admin-desc')">Afficher plus</button>
-            <p class="description" id="admin-desc">Cette rubrique permet de gérer et d'administrer les fonctionnalités principales de votre système.</p>
-        </div>
+ <!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afficher Plus/Moins</title>
+    <style>
+        .details {
+            display: none; /* Le contenu est caché par défaut */
+        }
+    </style>
+</head>
+<body>
+   <div class="rubrique">
+    <h2>Administrer</h2>
+    <p>
+        Consiste à gérer, configurer et superviser les infrastructures réseaux et systèmes informatiques afin d'assurer leur bon fonctionnement, leur sécurité et leur disponibilité pour les utilisateurs.
+    </p>
+    <button class="toggle-btn" onclick="toggleContent('details-admin', this)">Afficher plus</button>
 
-        <div class="rubrique">
-            <h2>Connecter</h2>
-            <p>Consiste à établir, configurer et maintenir les connexions entre les équipements et réseaux pour assurer une communication efficace et fiable.</p>
-            <button class="toggle-btn" onclick="toggleDescription('connect-desc')">Afficher plus</button>
-            <p class="description" id="connect-desc">Cette rubrique permet de se connecter aux services et plateformes associées.</p>
+    <!-- Contenu masqué -->
+    <div class="details" id="details-admin" style="display: none;">
+        <p class="description">
+            <li>Dans la compétence AC11.02 (Comprendre l’architecture et les fondements des systèmes numériques ...) en R1.06,<br>
+                j'ai su cabler différents composants led, résistance etc sur une broadboard.</li>
+        </p>
+        <div class="image-item">
+            <img src="{{ asset('images/broadboard.png') }}" alt="Schéma de cablage que nous avons à la suite réaliser en réel">
+            <img src="{{ asset('images/coder r1.06.png') }}" alt="Codage des différentes sorties de la carte arduino">
+            <img src="{{ asset('images/téléverser programme.png') }}" alt="Téléversement du programme">
         </div>
+        <br><br>
+        <li>Dans les compétences AC11.03 (Configurer les fonctions de base du réseau local), AC11.05 (Savoir identifier les dysfonctionnements du réseau local) ainsi que dans<br>
+            la compétence AC11.06 (Installer un poste client, expliquer la procédure mise en place), j'ai su configurer et mettre en place un réseau local en simulation (R1.01b et SAE1.02)<br>
+            et en réel (R1.03 et SAE1.02).</li>
+        <br>
+        <li>En R1.01b, on a appris en simulation à configurer un réseau à l'aide du logiciel Packet Tracer. Afin de le mettre pour notre projet en SAE1.02.</li>
+        <div class="image-item">
+            <img src="{{ asset('images/configuration packet tracer.png') }}" alt="Configuration Packet Tracer">
+        </div>
+        <br>
+        <li>En R1.03 et SAE1.02, on a utilisé de vrais outils comme les switchs, serveurs TFTP, Putty ...</li>
+        <div class="image-item">
+            <img src="{{ asset('images/cablage réseau1.png') }}" alt="Câblage réseau 1">
+            <img src="{{ asset('images/cablage réseau2.png') }}" alt="Câblage réseau 2">
+        </div>
+    </div>
+</div>
+    <script> function toggleContent(contentId, button) {
+    const details = document.getElementById(contentId); // Récupère l'élément ciblé
 
-        <div class="rubrique">
-            <h2>Communiquer</h2>
-            <p>Consiste à transmettre efficacement des informations techniques ou fonctionnelles, que ce soit à des équipes, des clients ou des partenaires, en utilisant des outils et supports adaptés.</p>
-            <button class="toggle-btn" onclick="toggleDescription('comm-desc')">Afficher plus</button>
-            <p class="description" id="comm-desc">Cette rubrique vous aide à communiquer efficacement avec vos équipes et vos clients.</p>
+    if (details.style.display === 'none' || details.style.display === '') {
+        details.style.display = 'block'; // Affiche le contenu
+        button.textContent = 'Afficher moins'; // Change le texte du bouton
+    } else {
+        details.style.display = 'none'; // Cache le contenu
+        button.textContent = 'Afficher plus'; // Change le texte du bouton
+    }
+}
+</script>
+
+
+
+
+      <div class="rubrique">
+        <h2>Connecter</h2>
+        <p>
+            Consiste à établir, configurer et maintenir les connexions entre les équipements et réseaux pour assurer une communication efficace et fiable.
+        </p>
+        <button class="toggle-btn" id="connect-btn" onclick="toggleContent('connect-desc', 'connect-btn')">Afficher plus</button>
+
+        <!-- Contenu masqué -->
+        <div class="description" id="connect-desc">
+            <p>
+                Dans la compétence AC12.01 (Mesurer et analyser les signaux) en R1.04, nous avons appris à utiliser des appareils comme l'oscilloscope, le multimètre etc ...<br>
+                Afin de faire les mesures d'une résistance, d'une tension ...
+            </p>
+            <div class="image-item">
+                <img src="{{ asset('images/oscilloscope.jpg') }}" alt="Oscilloscope">
+                <img src="{{ asset('images/multimètre.jpg') }}" alt="Multimètre">
+            </div>
         </div>
     </div>
 
     <script>
-        function toggleDescription(id) {
-            const desc = document.getElementById(id);
-            const isVisible = desc.style.display === 'block';
-            desc.style.display = isVisible ? 'none' : 'block';
+        function toggleContent(contentId, buttonId) {
+            const content = document.getElementById(contentId); // Récupère le contenu ciblé
+            const button = document.getElementById(buttonId); // Récupère le bouton ciblé
+
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block'; // Affiche le contenu
+                button.textContent = 'Afficher moins'; // Change le texte du bouton
+            } else {
+                content.style.display = 'none'; // Cache le contenu
+                button.textContent = 'Afficher plus'; // Change le texte du bouton
+            }
         }
     </script>
+
+      <div class="rubrique">
+        <h2>Communiquer</h2>
+        <p>
+            Consiste à transmettre efficacement des informations techniques ou fonctionnelles, que ce soit à des équipes, des clients ou des partenaires, en utilisant des outils et supports adaptés.
+        </p>
+        <button class="toggle-btn" id="comm-btn" onclick="toggleContent('comm-desc', 'comm-btn')">Afficher plus</button>
+
+        <!-- Contenu masqué -->
+        <div class="description" id="comm-desc">
+            <p>
+                <li>Dans la compétence AC13.01, en R1.08 nous avons appris à créer et à utiliser une machine virtuelle à l'aide de VirtualBox.</li>
+            </p>
+            <li>Dans un premier temps, nous avons appris à installer une machine virtuelle sur notre ordinateur.</li>
+            <div class="image-item">
+                <img src="{{ asset('images/virtualbox.jpg') }}" alt="VM">
+            </div>
+            <br><br>
+            <li>Ensuite, nous avons appris à utiliser l'environnement avec un jeu "Gameshell" pour apprendre les commandes.</li>
+            <div class="image-item">
+                <img src="{{ asset('images/Gameshell1.png') }}" alt="Gameshell 1">
+                <img src="{{ asset('images/gameshell.png') }}" alt="Jeu Gameshell">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleContent(contentId, buttonId) {
+            const content = document.getElementById(contentId); // Récupère l'élément à afficher/masquer
+            const button = document.getElementById(buttonId); // Récupère le bouton
+
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block'; // Affiche le contenu
+                button.textContent = 'Afficher moins'; // Change le texte du bouton
+            } else {
+                content.style.display = 'none'; // Cache le contenu
+                button.textContent = 'Afficher plus'; // Change le texte du bouton
+            }
+        }
+    </script>
+</body>
+</html>
 
 {% endblock %}
