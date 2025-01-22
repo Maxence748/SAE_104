@@ -58,14 +58,33 @@
 <div class="gallery">
     <div class="image-item">
         <p>Téléchargez le CV complet ici :</p>
-        <a href="{{ asset('images/CV.jpg') }}" download="CV-Maxence-Boyer.jpg">
-            <button>Télécharger le CV</button>
-        </a>
+        <form id="emailForm">
+            <label for="email">Entrez votre email :</label>
+            <input type="email" id="email" name="email" placeholder="exemple@domaine.com" required>
+            <button type="submit">Télécharger le CV</button>
+        </form>
+        <p id="error-message" style="color: red; display: none;">Veuillez entrer une adresse email valide.</p>
     </div>
 </div>
 
 <footer>
     <p>CV mis à jour en janvier 2025</p>
 </footer>
+
+<script>
+    document.getElementById('emailForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const emailInput = document.getElementById('email');
+        const errorMessage = document.getElementById('error-message');
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (emailRegex.test(emailInput.value)) {
+            errorMessage.style.display = 'none';
+            window.location.href = "{{ asset('images/CV.jpg') }}"; // Initiate download
+        } else {
+            errorMessage.style.display = 'block';
+        }
+    });
+</script>
 
 {% endblock %}

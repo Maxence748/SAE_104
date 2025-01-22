@@ -4,12 +4,23 @@
 {% block body %}
 
 <h1><B>Bienvenue sur mon E-Portfolio</B></h1>
-
 <br>
 <br>
-<p> Je m'appelle Maxence Boyer, j'habite en Haute-Loire à Sainte-Sigolène et je suis en première année de réseau et télécommunication à l'IUT de Roanne. </p>
+<div class="centered-content">
+    <div class="personal-info">
+        <p><strong>Nom :</strong> Boyer</p>
+        <p><strong>Prénom :</strong> Maxence</p>
+        <p><strong>Groupe:</strong> B2</p>
+    </div>
 
-<div id="image">
-  <img src="{{ asset('images/image_page1.jpg') }}" alt="Description de l'image">
+    <div class="introduction">
+        <p> Je m'appelle Maxence Boyer, j'habite en Haute-Loire à Sainte-Sigolène et je suis en première année de réseau et télécommunication à l'IUT de Roanne. </p>
+    </div>
 </div>
+
+
+<div class="image" style="text-align: center; margin-top: 20px;">
+  <img src="{{ asset('images/image_page1.jpg') }}" alt="Description de l'image" style="width: 300px; height: auto; border: 2px solid #ccc; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+</div>
+
 {% endblock %}
